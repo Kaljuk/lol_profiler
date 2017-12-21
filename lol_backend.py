@@ -1,2 +1,3 @@
 # Here goes all the backend functions
-print("Running backend")
+def printTest():
+    print("Test successful")
