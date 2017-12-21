@@ -14,3 +14,4 @@ be.printTest()
 
 # A new window
 win = tk.Tk()
+win
