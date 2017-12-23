@@ -20,9 +20,10 @@ def getData(r, n, api_key):
 # FUNC -> dict {id: summonerId, accountId: accountId, etc};
 # example      {id: 123123123, accountId: 121231231, etc}
 
-
-def spec(id): # Siin saame infot käimasoleva mängu kohta (overall) [kui mängu pole, siis tuleb 404 error!]
-    url = "https://na1.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/"+str(id)+"?api_key="+api_key
+# Siin saame infot käimasoleva mängu kohta (overall) [kui mängu pole, siis tuleb 404 error!]
+def spec(r, id):
+    url = "https://<REGION>.api.riotgames.com/lol/spectator/v3/active-games/by-summoner/<ID>?api_key="+api_key
+    url = url.replace('<REGION>', r).replace('<ID>', id)
     json_data = urlopen(url)
     andmed = json.load(json_data)
     return andmed
